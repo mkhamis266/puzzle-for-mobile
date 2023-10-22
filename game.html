@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Puzzle</title>
+
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- meta -->
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+    <script src="js/meta.js"></script>
+
+    <!-- style -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css?val=1" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css?val=1" />
+
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/d86c5c458d.js" crossorigin="anonymous"></script>
+  </head>
+  <body touch-action="none" unresolved>
+    <section id="gameSection">
+      <div id="playPanel" class="mt-5">
+        <div id="actualImageBox">
+          <div class="d-flex flex-column justify-content-around align-items-center">
+            <h1>puzzle game</h1>
+            <!-- <img id="actualImage" src="images/puzzle-Img.png" class="mb-4 img-fluid" /> -->
+            <!-- <div id="stepBox">
+                <div class="">Moves: <span class="stepCount">0</span></div>
+              </div> -->
+            <div id="timeBox"><span class="timeCount">00:00</span></div>
+          </div>
+        </div>
+        <div id="canvasContainer"div>
+      </div>
+    </section>
+    <div class="ui-container">
+      <div class="tooltip">
+        <span class="tooltip-content">Preview</span>
+        <div class="functionality" onclick="hint()">
+          <i class="fas fa-eye"></i>
+        </div>
+      </div>
+      <!-- <div class="tooltip">
+        <span class="tooltip-content">Verify</span>
+        <div class="functionality" onclick="verify()">
+          <i class="fas fa-check"></i>
+        </div>
+      </div> -->
+      <div class="tooltip">
+        <span class="tooltip-content">Fullscreen</span>
+        <div class="functionality" onclick="toggleFullscreen(this)">
+          <i class="fas fa-expand"></i>
+        </div>
+      </div>
+    </div>
+    <div class="ui disabled">
+      <!-- ending -->
+      <div id="winPopup" class="ui-popup-container disabled">
+        <div class="ui-popup">
+          <!-- Play again -->
+          <a href="index.html"></a>
+        </div>
+      </div>
+
+      <div id="losePopup" class="ui-popup-container disabled">
+        <div class="ui-popup">
+          <!-- Play again -->
+          <a href="index.html"></a>
+        </div>
+      </div>
+
+      <!-- follow, share, (generate, share), (zombiecraft link, discord), play again -->
+    </div>
+
+    <!-- scripts -->
+    <script src="js/p5.js"></script>
+    <script src="js/plugins/clipboard.js?val=1"></script>
+    <script src="js/plugins/transform.js?val=1"></script>
+    <script src="js/plugins/cors.js?val=1"></script>
+    <script src="js/jigsaw.js?val=1"></script>
+    <script src="js/momentjs.com_downloads_moment.js"></script>
+    <script src="js/script.js?val=1"></script>
+    <script src="js/main.js?val=1"></script>
+  </body>
+</html>

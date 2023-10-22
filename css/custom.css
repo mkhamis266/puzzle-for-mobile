@@ -1,0 +1,166 @@
+.startPage,
+#gameSection {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.startPage {
+  background-color: #09c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#startButton {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+#gameSection {
+  background-color: #59f1f1;
+}
+#canvasContainer {
+  width: 100%;
+  height: 100%;
+}
+
+img[alt="puzzle"] {
+  display: none;
+}
+
+#gameSection #playPanel {
+  background-color: #ffffffd6;
+  padding: 1.5rem;
+  margin: 10px auto;
+  width: 90%;
+  min-height: 75%;
+  position: relative;
+  transition: 0.25s all;
+}
+
+#playPanel * {
+  transition: 0.25s all;
+}
+
+#gameSection #actualImageBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#gameSection #actualImageBox .content-container {
+  flex-direction: column;
+  background-color: var(--main-color);
+  text-align: center;
+  color: #fff;
+  min-height: 94%;
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#gameSection #actualImageBox .content-container .info {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#gameSection #stepBox,
+#gameSection #timeBox {
+  display: inline-block;
+  /* width:48%; */
+  font-size: 26px;
+}
+
+#gameSection #stepBox div {
+  /* background-color:#00b4b3; */
+  display: inline-block;
+  padding: 1px 4px;
+  margin: 0px auto;
+  max-width: 800px;
+}
+
+#gameSection img#actualImage {
+  /* border: 2px solid #a46; */
+  /* height: 280px;
+  width: 280px; */
+  box-shadow: 1px 1px 10px var(--gray);
+  border-radius: 10px;
+}
+
+#gameSection #sortable {
+  /* border: 2px solid #a46; */
+  box-shadow: 1px 1px 10px var(--gray);
+  list-style-type: none;
+  display: inline-block;
+  margin: 10px;
+  padding: 0;
+  width: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#gameSection #sortable li {
+  background-size: 400% 400%;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+
+/* #gameOver {
+  font-family: "Games", sans-serif;
+  letter-spacing: 0.5rem;
+} */
+.win-message {
+  font-weight: bold;
+  text-shadow: 1px 1px 50px #59f1f1;
+}
+
+.win-message {
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+  font-size: 2rem;
+}
+.win-message span {
+  position: relative;
+  display: inline-block;
+  color: var(--main-color);
+  text-transform: uppercase;
+  animation: waviy 1s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+}
+
+.vision-logo {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 100px;
+  height: auto;
+}
+
+#timeBox {
+  background-color: var(--main-color);
+  color: #fff;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px #ffffffd6 inset;
+  padding: 0.25rem 1rem;
+  margin-top: 0.75rem;
+}

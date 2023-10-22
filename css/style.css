@@ -1,0 +1,222 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #00b4b3;
+  --gray: #333;
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial;
+}
+
+body {
+  position: relative;
+  touch-action: none;
+}
+
+canvas {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); /* mobile webkit */
+}
+
+.ui {
+  position: absolute;
+  transition: 0.25s all;
+  z-index: 10;
+  left: 0;
+  top: 0;
+}
+
+.disabled {
+  pointer-events: none;
+  display: none;
+  opacity: 0;
+}
+
+.disabled * {
+  display: none;
+}
+
+.ui-container {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.25s all;
+  z-index: 100;
+}
+
+.ui-popup-container {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.25);
+  transition: 1s all;
+}
+
+button[type="button"] {
+  color: #fff;
+  background: var(--main-color);
+  padding: 8px 25px;
+  border-radius: 200px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s all;
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.functionality {
+  display: flex;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: black;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: 0.25s all;
+  margin-top: 10px;
+}
+
+.functionality:hover,
+button[type="button"]:hover {
+  background: var(--main-color);
+  transition: 0.1s all;
+}
+
+.functionality:active,
+button[type="button"]:active {
+  background: var(--main-color);
+}
+
+/* popup */
+
+.ui-popup {
+  border-radius: 5px;
+  text-align: center;
+  transform: translateY(0px);
+  transition: all 0.5s;
+  /* color: var(--main-color); */
+  min-height: 600px;
+  min-width: 600px;
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+#winPopup .ui-popup,
+#losePopup .ui-popup {
+}
+#winPopup .ui-popup {
+  background-image: url(../images/win_bg.png);
+}
+
+.ui-popup a {
+  position: absolute;
+  left: 33%;
+  bottom: 18%;
+  width: 37%;
+  height: 13%;
+}
+
+.section {
+  margin: 25px;
+}
+
+#losePopup .ui-popup {
+  background-image: url(../images/lose_bg.png);
+}
+.section.container {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  margin: 0px;
+  margin-bottom: 1em;
+}
+
+a {
+  color: #4286f4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* tooltip */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  opacity: 1;
+}
+
+.tooltip .tooltip-content {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: calc(25% + 3px);
+  right: 120%;
+}
+
+.tooltip .tooltip-content::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.75);
+}
+.tooltip:hover .tooltip-content {
+  visibility: visible;
+}
+
+/* touch screen */
+
+@media (hover: none) {
+  .tooltip .tooltip-content {
+    display: none;
+  }
+
+  .functionality:hover,
+  input[type="button"]:hover,
+  .functionality:active,
+  input[type="button"]:active {
+    background: black;
+  }
+}
