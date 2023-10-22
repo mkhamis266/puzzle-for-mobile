@@ -1,5 +1,5 @@
 var defaultPuzzleImageURL = "./images/puzzle-Img.png";
-var aspect = { x: 4, y:3 }; // for cols and rows
+var aspect = { x: 3, y:3 }; // for cols and rows
 let moves = 0;
 var canvas;
 
@@ -107,7 +107,7 @@ function start() {
   cols = params.get("cols") > 0 ? params.get("cols") : aspect.x;
   rows = params.get("rows") > 0 ? params.get("rows") : aspect.y;
   // scl = params.get("scale") > 0 ? params.get("scale") : 0.5;
-  scl = params.get("scale") > 0 ? params.get("scale") : 1.2;
+  scl = params.get("scale") > 0 ? params.get("scale") : 0.8;
 
   progress = o = numFrames(img) * 2;
 
