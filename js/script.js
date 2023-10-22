@@ -1,6 +1,6 @@
 var defaultPuzzleImageURL = "./images/puzzle-Img.png";
-var aspect = { x: 4, y: 4 }; // for cols and rows
-
+var aspect = { x: 4, y:3 }; // for cols and rows
+let moves = 0;
 var canvas;
 
 var img, preview, frame;
@@ -107,7 +107,7 @@ function start() {
   cols = params.get("cols") > 0 ? params.get("cols") : aspect.x;
   rows = params.get("rows") > 0 ? params.get("rows") : aspect.y;
   // scl = params.get("scale") > 0 ? params.get("scale") : 0.5;
-  scl = params.get("scale") > 0 ? params.get("scale") : 0.6;
+  scl = params.get("scale") > 0 ? params.get("scale") : 1.2;
 
   progress = o = numFrames(img) * 2;
 
@@ -145,14 +145,18 @@ function start() {
 
       switch (orientation) {
         case HORIZONTAL:
-          positionX = ((side * preview.width) / 2) * random(1.15, 1.9);
-          positionY = random((-preview.height / 2) * 1.15, (preview.height / 2) * 1.15);
+          positionX = 0;
+          positionY = 0;
+          positionX = random(-preview.width / 2 - 200, preview.width / 2);
+          positionY = random(-preview.height-300, -preview.height / 1.65);
           // positionX = (preview.width / 2) * random(1.2, 3);
           // positionY = preview.height * random(-0.5, 0.5);
           break;
         case VERTICAL:
-          positionX = random((-preview.width / 2) * 1.9, (preview.width / 2) * 1.9);
-          positionY = ((side * preview.height) / 2) * random(1.15, 1.45);
+          positionX = random(-preview.width / 2 -200, preview.width / 2);
+          positionY = random(-preview.height-300, -preview.height / 1.65);
+          // positionX = random((-preview.width / 2) * 1.9, (preview.width / 2) * 1.9);
+          // positionY = ((side * preview.height) / 2) * random(1.15, 1.45);
           // positionX = (preview.width / 2) * random(1.2, 3);
           // positionY = preview.height * random(-0.5, 0.5);
           break;
@@ -210,7 +214,7 @@ function draw() {
       return;
     } else {
       fill(0);
-      text("Welcome to puzzle", width / 2, height / 2);
+      text("loading...", width / 2, height / 2);
     }
 
     stroke(0);
@@ -379,6 +383,7 @@ function onSolve() {
   setTimeout(() => {
     document.querySelector("#winPopup").classList.remove("disabled");
     document.querySelector(".ui-container").classList.add("disabled");
+
   }, 1000);
 }
 
@@ -471,6 +476,7 @@ class Piece {
     // placed outline
     if (this.placed != -1) {
       if (solved) {
+        let score;
         var deltaPreviewing = millis() - previewing;
         if (deltaPreviewing < 1500) {
           var fade = map(sin(-deltaPreviewing * 0.002 + 1.5), -1, 1, 0, 255);
@@ -570,7 +576,7 @@ class Piece {
 
   released() {
     if (this.dragging) onPieceRelease(this);
-
+    moves++;
     // Quit dragging
     this.dragging = false;
   }

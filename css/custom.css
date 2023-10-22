@@ -9,12 +9,7 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.startPage {
-  background-color: #09c;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 #startButton {
   color: #fff;
   text-decoration: none;
@@ -163,4 +158,8 @@ img[alt="puzzle"] {
   box-shadow: 1px 1px 5px #ffffffd6 inset;
   padding: 0.25rem 1rem;
   margin-top: 0.75rem;
+}
+
+#canvasContainer {
+  min-height: 560px;
 }

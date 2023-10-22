@@ -1,14 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Puzzle</title>
-    <link rel="stylesheet" href="css/custom.css?val=1" />
-  </head>
-  <body>
-    <main class="startPage">
-      <a id="startButton" href="game.html"> start </a>
-    </main>
-  </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>game</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Styles -->
+    <script>
+        if (localStorage.getItem('player')) {
+            location.href = "./game.html";
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css?val=1">
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="container pt-5">
+
+            <!-- End Row -->
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="box-content mt-5">
+                        <div class="top-logos mb-3 pb-3 d-flex justify-content-center">
+                            <!-- <img src="./graphics/Logo 1.a0b143d1.svg" alt="" class="img-fluid"> -->
+                            <img src="./images/Pfizer_Logos-colored.png" height="70" alt="">
+
+                        </div>
+                        <h3 class="text-center my-5">Welcome to Quiz</h3>
+                        <form id="registerForm" class="row g-3">
+                            <div class="row mb-3">
+                                <label for="inputFullName" class="col-sm-2 col-form-label">Full Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputFullName"
+                                        placeholder="Enter Your Full Name" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3"
+                                        placeholder="Enter Your Email" required>
+                                </div>
+                            </div>
+
+                            <div id="registerResultContainer"
+                                class="mt-5 d-flex justify-content-center align-items-center text-danger">
+                            </div>
+
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary">Start</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- End Container -->
+    </div>
+    <script src="https://cdn.jsdelivr.xyz/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+        </script>
+    <script src="js/index.js?val=1"></script>
+</body>
+
 </html>

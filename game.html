@@ -20,6 +20,12 @@
 
     <!-- icons -->
     <script src="https://kit.fontawesome.com/d86c5c458d.js" crossorigin="anonymous"></script>
+    <script>
+        if (localStorage.getItem('player') == null) {
+            location.href = "./index.html";
+        }
+    </script>
+  
   </head>
   <body touch-action="none" unresolved>
     <section id="gameSection">
@@ -34,9 +40,10 @@
             <div id="timeBox"><span class="timeCount">00:00</span></div>
           </div>
         </div>
-        <div id="canvasContainer"div>
+        <div id="canvasContainer" class="mt-2">
       </div>
     </section>
+
     <div class="ui-container">
       <div class="tooltip">
         <span class="tooltip-content">Preview</span>
@@ -63,6 +70,9 @@
         <div class="ui-popup">
           <!-- Play again -->
           <a href="index.html"></a>
+          <h3 class="text-center font-weight-bold">
+            Score <span id="score">0</span>
+          </h3>
         </div>
       </div>
 
@@ -70,6 +80,9 @@
         <div class="ui-popup">
           <!-- Play again -->
           <a href="index.html"></a>
+          <h3 class="text-center font-weight-bold">
+            Score <span id="score">0</span>
+          </h3>
         </div>
       </div>
 
