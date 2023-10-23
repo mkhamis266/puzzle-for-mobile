@@ -92,7 +92,7 @@ function setup() {
   }
 
   // 10 sec timeout
-  setTimeout(() => (loading ? (error = true) : false), 5000);
+  // setTimeout(() => (loading ? (error = true) : false), 15000);
 }
 
 function start() {
@@ -164,11 +164,11 @@ function start() {
         switch (orientation) {
           case HORIZONTAL:
             positionX = (preview.width / 2) * random(1.1, 1.4);
-            positionY = random(-preview.height/2-200, preview.height/2 -200);
+            positionY = random(-preview.height / 2 - 200, preview.height / 2 - 200);
             break;
           case VERTICAL:
             positionX = -(preview.width / 2) * random(1, 1.4);
-            positionY = random(-preview.height/2 -200, preview.height/2 -200);
+            positionY = random(-preview.height / 2 - 200, preview.height / 2 - 200);
             break;
         }
       }
