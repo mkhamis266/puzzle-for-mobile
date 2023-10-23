@@ -1,5 +1,5 @@
 var defaultPuzzleImageURL = "./images/puzzle-Img.png";
-var aspect = { x: 3, y: 3 }; // for cols and rows
+var aspect = { x: 5, y: 3 }; // for cols and rows
 let moves = 0;
 var canvas;
 
@@ -146,8 +146,6 @@ function start() {
       if (window.innerWidth < 765) {
         switch (orientation) {
           case HORIZONTAL:
-            positionX = 0;
-            positionY = 0;
             positionX = random(-preview.width / 2 - 200, preview.width / 2);
             positionY = random(-preview.height - 300, -preview.height / 1.65);
             // positionX = (preview.width / 2) * random(1.2, 3);
