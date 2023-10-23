@@ -254,6 +254,14 @@ a:hover {
 .btn-primary,
 .btn-primary:hover,
 .btn-primary:active {
-  background-color: #05163a;
-  border: #05163a;
+  background-color: #004098;
+  border: #004098;
+}
+
+@media screen and (min-width: 768px) {
+  .ui-popup {
+    margin-top: 5%;
+    min-height: 60%;
+    min-width: 40%;
+  }
 }

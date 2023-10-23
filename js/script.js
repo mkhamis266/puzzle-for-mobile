@@ -1,5 +1,5 @@
 var defaultPuzzleImageURL = "./images/puzzle-Img.png";
-var aspect = { x: 3, y:3 }; // for cols and rows
+var aspect = { x: 3, y: 3 }; // for cols and rows
 let moves = 0;
 var canvas;
 
@@ -143,23 +143,40 @@ function start() {
       var orientation = Math.random() < 0.5 ? HORIZONTAL : VERTICAL;
       var side = Math.random() < 0.5 ? -1 : 1;
 
-      switch (orientation) {
-        case HORIZONTAL:
-          positionX = 0;
-          positionY = 0;
-          positionX = random(-preview.width / 2 - 200, preview.width / 2);
-          positionY = random(-preview.height-300, -preview.height / 1.65);
-          // positionX = (preview.width / 2) * random(1.2, 3);
-          // positionY = preview.height * random(-0.5, 0.5);
-          break;
-        case VERTICAL:
-          positionX = random(-preview.width / 2 -200, preview.width / 2);
-          positionY = random(-preview.height-300, -preview.height / 1.65);
-          // positionX = random((-preview.width / 2) * 1.9, (preview.width / 2) * 1.9);
-          // positionY = ((side * preview.height) / 2) * random(1.15, 1.45);
-          // positionX = (preview.width / 2) * random(1.2, 3);
-          // positionY = preview.height * random(-0.5, 0.5);
-          break;
+      if (window.innerWidth < 765) {
+        switch (orientation) {
+          case HORIZONTAL:
+            positionX = 0;
+            positionY = 0;
+            positionX = random(-preview.width / 2 - 200, preview.width / 2);
+            positionY = random(-preview.height - 300, -preview.height / 1.65);
+            // positionX = (preview.width / 2) * random(1.2, 3);
+            // positionY = preview.height * random(-0.5, 0.5);
+            break;
+          case VERTICAL:
+            positionX = random(-preview.width / 2 - 200, preview.width / 2);
+            positionY = random(-preview.height - 300, -preview.height / 1.65);
+            // positionX = random((-preview.width / 2) * 1.9, (preview.width / 2) * 1.9);
+            // positionY = ((side * preview.height) / 2) * random(1.15, 1.45);
+            // positionX = (preview.width / 2) * random(1.2, 3);
+            // positionY = preview.height * random(-0.5, 0.5);
+            break;
+        }
+      } else {
+        switch (orientation) {
+          case HORIZONTAL:
+            positionX = 0;
+            positionY = 0;
+
+            positionX = (preview.width / 2) * random(1.2, 3);
+            positionY = preview.height * random(-0.5, 0.5);
+            break;
+          case VERTICAL:
+
+            positionX = (preview.width / 2) * random(1.2, 3);
+            positionY = preview.height * random(-0.5, 0.5);
+            break;
+        }
       }
 
       const piece = new Piece(x, y, positionX, positionY);
@@ -383,7 +400,6 @@ function onSolve() {
   setTimeout(() => {
     document.querySelector("#winPopup").classList.remove("disabled");
     document.querySelector(".ui-container").classList.add("disabled");
-
   }, 1000);
 }
 
