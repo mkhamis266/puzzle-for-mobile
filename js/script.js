@@ -163,16 +163,12 @@ function start() {
       } else {
         switch (orientation) {
           case HORIZONTAL:
-            positionX = 0;
-            positionY = 0;
-
-            positionX = (preview.width / 2) * random(1.2, 3);
-            positionY = preview.height * random(-0.5, 0.5);
+            positionX = (preview.width / 2) * random(1.1, 1.4);
+            positionY = random(-preview.height/2-200, preview.height/2 -200);
             break;
           case VERTICAL:
-
-            positionX = (preview.width / 2) * random(1.2, 3);
-            positionY = preview.height * random(-0.5, 0.5);
+            positionX = -(preview.width / 2) * random(1, 1.4);
+            positionY = random(-preview.height/2 -200, preview.height/2 -200);
             break;
         }
       }
